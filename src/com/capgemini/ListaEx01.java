@@ -196,4 +196,91 @@ public class ListaEx01 {
         System.out.println("O valor final deste veiculo para o consumidor é de: "+custoFinal);
     }
 
+    public void maiorQueDez(){
+        int numero = 0;
+        System.out.println("Informe um numero inteiro: ");
+        numero = entrada.nextInt();
+        if(numero > 10){
+            System.out.println(numero+" é maior que dez!");
+        }else{
+            System.out.println(numero+" é menor que dez!");
+        }
+    }
+
+    public void maior(){
+       int numero1=0;
+       int numero2=0;
+
+        System.out.println("Informe o primeiro número: ");
+        numero1 = entrada.nextInt();
+        System.out.println("Informe o segundo número:");
+        numero2 = entrada.nextInt();
+
+        if(numero1 > numero2){
+            System.out.println(numero1+" é maior que "+numero2);
+        } else if (numero2 > numero1) {
+            System.out.println(numero2+" é maior que "+numero1);
+        }else{
+            System.out.println(numero1+" é igual a "+numero2);
+        }
+
+    }
+
+    public void intervalo(){
+        int intervaloInicio = 100;
+        int intervaloFinal = 200;
+        double numero = 0.0;
+
+        System.out.println("Informe um número");
+        numero = entrada.nextDouble();
+        if (numero >= 100 && numero >= 200){
+            System.out.println("O numero informado está entre 100 e 200");
+        }else{
+            System.out.println("O numero informado não está entre 100 e 200. informe outro número!");
+        }
+    }
+
+    public void mediaAluno(){
+        double nota1 = 0.0;
+        double nota2 = 0.0;
+        double nota3 = 0.0;
+        double media = 0.0;
+        String nome = "";
+
+        System.out.println("Iforme o nome do aluno: ");
+        nome= entrada.next();
+        System.out.println("Informe a primeira nota de"+nome+": ");
+        nota1 = entrada.nextDouble();
+        System.out.println("Informe a segund nota de"+nome+": ");
+        nota2 = entrada.nextDouble();
+        System.out.println("Informe a terceira nota de"+nome+": ");
+        nota3 = entrada.nextDouble();
+
+        media = (nota1 + nota2+ nota3)/3;
+
+        if(media >= 7){
+            System.out.println(nome+" está aprovado com sucesso! sua nota final é "+media);
+        } else if (media >= 5.1 || media <=6.9) {
+            System.out.println(nome+" está de recuperação! sua nota final foi"+media+" deve se esforçar mais e preparar para prova final de recuperação! boa sorte.");
+        }else {
+            System.out.println("Infelizmente "+nome+" está reprovado, tente novamente e se esforce mais. ");
+        }
+    }
+
+    public void intervaloDezECentoECinquenta(){
+        int[] numeros =  new  int [80];
+        for(int i =0; i < numeros.length; i++){
+            int index = 1;
+            System.out.println("Informe o numero: "+index+"/"+numeros.length);
+            numeros[i] = entrada.nextInt();
+            index++;
+        }
+
+        for(int i =0; i > numeros.length; i++){
+            if(numeros[i] > 11 && numeros[i] < 151){
+                System.out.println(numeros[i]+" está entre 10 e 150");
+            }
+        }
+    }
+
 }
