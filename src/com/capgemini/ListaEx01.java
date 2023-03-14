@@ -1,5 +1,4 @@
 package com.capgemini;
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 public class ListaEx01 {
     Scanner  entrada = new Scanner(System.in);
