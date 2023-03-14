@@ -1,4 +1,5 @@
 package com.capgemini;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 public class ListaEx01 {
     Scanner  entrada = new Scanner(System.in);
@@ -97,4 +98,103 @@ public class ListaEx01 {
 
 
     }
+
+    public void trocaValores(){
+        double a = 0.0;
+        double b= 0.0;
+        double c = 0.0;
+
+        System.out.println("Informe o valor de A:");
+        a = entrada.nextDouble();
+        System.out.println("Informe o valor de B:");
+        b= entrada.nextDouble();
+        System.out.println("A: "+a+" B: "+b);
+        c = a;
+        a = b;
+        b = c;
+
+        System.out.println("Os valores foram trocados");
+        System.out.println("A: "+a+" B: "+b);
+    }
+
+    public void convertCelsiusParaFahrenheit(){
+        double f = 0.0;
+        int c = 0;
+        System.out.println("Informe a temperatura em Celsius: ");
+        c = entrada.nextInt();
+        f = (9*c+190)/5 ;
+        System.out.println("Fahrenheit: "+f);
+    }
+
+    public void convertDolar(){
+        double dolarCotacao =0.0;
+        double real = 0.0;
+        double dolar= 0.0;
+
+        System.out.println("Olá informe o valor da cotação do dólar: ");
+        dolarCotacao= entrada.nextDouble();
+        System.out.println("Informe a quantidade de dólar para conversão: ");
+        dolar = entrada.nextDouble();
+        real = dolarCotacao * dolar;
+        System.out.println("O montante convertido em real é de "+real);
+    }
+
+    public void rendimentoPoupanca(){
+        double deposit = 0.0;
+        double redimento = 0.0;
+        double juros = 0.007;
+        int meses= 1;
+
+        System.out.println("Informe o valor do deposito");
+        deposit = entrada.nextDouble();
+        redimento = (deposit * juros) *meses;
+
+        System.out.println("O valor do rendimento em "+meses+ " mês é: "+redimento);
+
+    }
+
+    public void calcularPrestacao(){
+        int qtdPrestacoes= 5;
+        double valorPrestacao = 0.0;
+        double valorCompra = 0.0;
+
+        System.out.println("Informe o valor da compra");
+        valorCompra = entrada.nextDouble();
+        valorPrestacao = valorCompra / qtdPrestacoes;
+
+        System.out.println("Total: "+valorCompra);
+        System.out.println(qtdPrestacoes+" vezes de "+valorPrestacao);
+    }
+
+    public void definirLucroProduto(){
+        double precoCustoProduto = 0.0;
+        double lucroProduto = 0.0;
+        double valorVenda = 0.0;
+
+        System.out.println("Informe o valor de custo do produto: ");
+        precoCustoProduto = entrada.nextDouble();
+
+        System.out.println("Informe o percentual de lucro em porcentagem: ");
+        lucroProduto = entrada.nextDouble();
+        lucroProduto = lucroProduto/100;
+        valorVenda = (precoCustoProduto * valorVenda) + precoCustoProduto;
+
+        System.out.println("O valor da venda é de "+valorVenda);
+    }
+
+    public void custoCarro(){
+        double custoFabrica = 0.0;
+        double impostos = 1.45;
+        double custoFabricaEImpostos = 0.0;
+        double percentualDistribuidor = 1.28;
+        double custoFinal = 0.0;
+
+        System.out.println("Informe o custo da fabrica para produzir o carro: ");
+        custoFabrica = entrada.nextDouble();
+        custoFabricaEImpostos = custoFabrica * impostos;
+        custoFinal = custoFabricaEImpostos * percentualDistribuidor;
+
+        System.out.println("O valor final deste veiculo para o consumidor é de: "+custoFinal);
+    }
+
 }
