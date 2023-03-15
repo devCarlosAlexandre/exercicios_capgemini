@@ -283,4 +283,60 @@ public class ListaEx01 {
         }
     }
 
+    public void idade75Pessoas(){
+        int flag = 1;
+        int [] idades = new int[75];
+
+        for(int i =0; i < idades.length; i++){
+            System.out.println("Informe a idade");
+            idades[i] = entrada.nextInt();
+            System.out.println("deseja continuar? se sim digite 1 se não digite qualquer outro caractere ");
+            flag = entrada.nextInt();
+            if(flag == 0 ){
+                break;
+            }
+        }
+
+        for(int i =0; i < idades.length; i++){
+            if(idades[i] >= 18){
+                System.out.println("Maior de idade");
+            }else {
+                System.out.println("Menor de idade");
+            }
+        }
+    }
+    /*
+    Escreva um algoritmo que leia o nome e o sexo de 56 pessoas e informe o nome e se ela é homem ou
+    mulher. No final informe total de homens e de mulheres;
+     */
+
+    public void cadastroPessoas(){
+
+        Pessoa[] pessoas = new Pessoa[56];
+        System.out.print("Você pode cadastrar até 56 pessoas: ");
+        int count =0;
+        for(int i=0; i < pessoas.length; i++){
+            System.out.println(count+"/"+pessoas.length);
+            int flag= 1;
+            Pessoa pessoa = new Pessoa();
+            System.out.println("Informe o nome: ");
+            pessoa.setNome(entrada.nextLine());
+            System.out.println("Informe a idade: ");
+            pessoa.setIdade(entrada.nextInt());
+            System.out.println("Informe o sexo: ");
+            pessoa.setSexo(entrada.next());
+            pessoas[i] = pessoa;
+            System.out.println("Deseja continuar? se não diigite 0 se não digite qualquer outro numero");
+            flag = entrada.nextInt();
+            if(flag == 0 ){
+                break;
+            }
+        }
+
+        for(int i=0; i < pessoas.length; i++){
+            pessoas[i].getPessoa();
+        }
+
+    }
+
 }
