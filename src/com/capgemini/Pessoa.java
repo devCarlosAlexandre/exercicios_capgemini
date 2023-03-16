@@ -2,8 +2,17 @@ package com.capgemini;
 
 public class Pessoa {
     private int idade=0;
+    private String saude="";
     private String nome = "";
     private String sexo = "";
+
+    public void setSaude(String saude){
+        this.saude = saude;
+    }
+    public String getSaude(){
+        System.out.println(this.saude);
+        return this.saude;
+    }
 
     public void setNome(String nome){
         this.nome = nome;

@@ -311,6 +311,9 @@ public class ListaEx01 {
         Pessoa[] pessoas = new Pessoa[56];
         System.out.print("Você pode cadastrar até 56 pessoas: ");
         int count =0;
+        int countPessoas=0;
+        int mulheres = 0;
+        int homens = 0;
         for(int i=0; i < pessoas.length; i++){
             System.out.println(count+"/"+pessoas.length);
             int flag= 1;
@@ -321,6 +324,11 @@ public class ListaEx01 {
             pessoa.setIdade(entrada.nextInt());
             System.out.println("Informe o sexo: ");
             pessoa.setSexo(entrada.next());
+            if( pessoa.getSexo() == "feminino"){
+                mulheres++;
+            } else if (pessoa.getSexo() == "masculino") {
+                homens++;
+            }
             pessoas[i] = pessoa;
             System.out.println("Deseja continuar? se não diigite 0 se não digite qualquer outro numero");
             flag = entrada.nextInt();
@@ -331,8 +339,101 @@ public class ListaEx01 {
 
         for(int i=0; i < pessoas.length; i++){
             pessoas[i].getPessoa();
+            countPessoas++;
         }
+        System.out.println("Há um total de "+countPessoas+" pessoas cadastradas, sendo "+mulheres+" mulheres e "+homens+" homens");
 
     }
+    /*
+    A concessionária de veículos “CARANGO VELHO” está vendendo os seus veículos com desconto. Faça
+    um algoritmo que calcule e exiba o valor do desconto e o valor a ser pago pelo cliente de vários carros. O
+    desconto deverá ser calculado de acordo com o ano do veículo. Até 2000 - 12% e acima de 2000 - 7%. O
+    sistema deverá perguntar se deseja continuar calculando desconto até que a resposta seja: “(N) Não”.
+    Informar total de carros com ano até 2000 e total geral;
+     */
+
+    public void vendaVeiculo(){
+
+    }
+
+    public void servicoMilitar(){
+        String flag= "s";
+        System.out.println("informe a quantidade de pessoas que você deseja realizar a verificação: ");
+        int nPessoas = entrada.nextInt();
+        Pessoa[] pessoas = new Pessoa[nPessoas];
+
+        for(int i=0; i < pessoas.length; i++){
+            System.out.println("Nome: ");
+            pessoas[i].setNome(entrada.nextLine());
+            System.out.println("Idade: ");
+            pessoas[i].setIdade(entrada.nextInt());
+            System.out.println("sexo: ");
+            pessoas[i].setSexo(entrada.next());
+            System.out.println("Saude boa ou ruim? ");
+            pessoas[i].setSaude(entrada.next());
+            System.out.println("Deseja continua? se se não digite \"n\" se sim digite qualquer outra tecla.");
+            flag = entrada.next();
+            if(flag == "n"){
+                break;
+            }
+        }
+
+        for(int i =0; i < pessoas.length; i++){
+            boolean apto = true;
+            if(pessoas[i].getIdade() < 18){
+                apto = false;
+                System.out.println(pessoas[i].getNome()+" não está hapto para servir ao exercito pois é menor de idade");
+            }else if(pessoas[i].getSaude() == "ruim"){
+                apto = false;
+                System.out.println(pessoas[i].getNome()+" não está hapto para servir ao exercito pois sua saúde não esta boa");
+            }
+            if(apto){
+                System.out.println(pessoas[i].getNome()+" está hapto para servir ao exercito");
+            }
+        }
+    }
+
+    public void resumoVendaProduto(){
+        double[] precosCusto = new double[40];
+        double[] precoVenda = new double[40];
+        double totalVenda=0.0;
+        int countVenda =0;
+        double totalCusto=0.0;
+
+        for(int i=0; i < precosCusto.length; i++){
+            double custofinal = 0.0;
+            double lucro = 0.0;
+            System.out.println("informe o preço de custo do produto: ");
+            precosCusto[i] = entrada.nextDouble();
+            totalCusto += precosCusto[i];
+            System.out.println("Informe o preço de venda: ");
+            precoVenda[i]= entrada.nextDouble();
+           lucro= precosCusto[i] - precoVenda[i];
+           totalVenda += precoVenda[i];
+            System.out.println("Lucro: "+lucro );
+            System.out.println("Venda: "+precoVenda[i]);
+            countVenda++;
+        }
+
+        System.out.println("Media Venda: "+(totalVenda /countVenda ));
+        System.out.println("Media Custo: "+(totalCusto/countVenda));
+    }
+
+    /*
+    Faça um algoritmo que receba um número e mostre uma mensagem caso este número sege maior que 80,
+    menor que 25 ou igual a 40;
+     */
+    public void maiorIgual(){
+        int[] numeros = new int[40];
+        for(int i=0; i < numeros.length; i++){
+            System.out.println("Informe um numero inteiro: ");
+            numeros[i] = entrada.nextInt();
+            if(numeros[i] >= 80 || numeros[i] >= 25 || numeros[i] == 40){
+                System.out.println(" Este numero esá entre os listados");
+            }
+        }
+    }
+
+
 
 }
