@@ -1,5 +1,8 @@
 package com.capgemini;
 
+import java.time.DateTimeException;
+import java.util.Date;
+
 public class Pessoa {
     private int idade=0;
     private String saude="";
@@ -21,6 +24,13 @@ public class Pessoa {
         System.out.println(this.nome);
         return this.nome;
     }
+    public void setDataNascimento(int ano){
+        int data = ano;
+        int anoAtual = new Date().getYear() ;
+        this.idade = data - anoAtual;
+        System.out.println(this.idade);
+    }
+
     public void setIdade(int idade){
         this.idade = idade;
     }

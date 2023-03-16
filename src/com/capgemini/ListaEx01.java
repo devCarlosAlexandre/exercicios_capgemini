@@ -419,10 +419,6 @@ public class ListaEx01 {
         System.out.println("Media Custo: "+(totalCusto/countVenda));
     }
 
-    /*
-    Faça um algoritmo que receba um número e mostre uma mensagem caso este número sege maior que 80,
-    menor que 25 ou igual a 40;
-     */
     public void maiorIgual(){
         int[] numeros = new int[40];
         for(int i=0; i < numeros.length; i++){
@@ -433,6 +429,99 @@ public class ListaEx01 {
             }
         }
     }
+
+    public void numerosN(){
+        boolean flag = true;
+        int numero = 0;
+        while (flag == true){
+            System.out.println("Informe um numero inteiro: ");
+            numero = entrada.nextInt();
+            if(numero == 0){
+                System.out.println("o numero informado é igual a 0.");
+            }
+            if (numero < 0){
+                System.out.println("o numero informado é negativo.");
+            }
+            if (numero > 0){
+                System.out.println("o numero informado é maior que 0.");
+            }
+
+            System.out.println("Deseja continuar? digite true para sim ou false para não");
+            flag = entrada.nextBoolean();
+        }
+    }
+
+    public void numerosIguais(){
+        System.out.println("Informe o primeiro numero inteiro: ");
+        int numero1 = entrada.nextInt();
+        System.out.println("Informe o segundo numero inteiro: ");
+        int numero2 = entrada.nextInt();
+
+        if(numero1 == numero2){
+            System.out.println("Os numeros informados são iguais");
+        }
+        if (numero1 < numero2){
+            System.out.println("Os numeros informados são diferentes e "+numero2+" é maior que "+numero1);
+        }
+        if (numero1 > numero2){
+            System.out.println("Os numeros informados são diferentes e "+numero1+" é maior que "+numero2);
+        }
+
+    }
+
+    public void escrevaPorExtenso(){
+        int numero = 0;
+        System.out.println("Informe um número de 1 a 5: ");
+        numero = entrada.nextInt();
+        if (numero <= 0 || numero > 5){
+            System.out.println("Numero invalido, por favor informe um numero dentro do intervalo solicitado.");
+        }else{
+            System.out.println("Numero válido, obrigado!");
+        }
+    }
+
+    public void carangoDescontoVeiculo(){
+        double precoFinalVenda = 0.0;
+        int opc = 0;
+        System.out.println("Informe o nome do veiculo");
+        String nomeVeiculo = entrada.nextLine();
+        System.out.println("Informe o preço de venda do veiculo");
+        double precoVenda = entrada.nextDouble();
+        do {
+            System.out.println("Informe o tipo de combustivel do veiculo: 1 - gasolina. 2 - álcool. 3 - diesel");
+            opc = entrada.nextInt();
+
+            switch (opc) {
+                case 1:
+                    precoFinalVenda =precoVenda  - (precoVenda * 0.25);
+                    System.out.println("O preço de venda com 25% de desconto sobre o veiculo inforado é de R$" + precoFinalVenda);
+                    break;
+                case 2:
+                    precoFinalVenda = precoVenda - (precoVenda * 0.21);
+                    System.out.println("O preço de venda com 21% de desconto sobre o veiculo inforado é de R$" + precoFinalVenda);
+                    break;
+                case 3:
+                    precoFinalVenda = precoVenda - (precoVenda * 0.14);
+                    System.out.println("O preço de venda com 14% de desconto sobre o veiculo inforado é de R$" + precoFinalVenda);
+                    break;
+                default:
+                    System.out.println("Opção invalida");
+            }
+        }while (opc < 1 || opc > 3);
+    }
+
+    /*
+    Escreva um algoritmo para uma empresa que decide dar um reajuste a seus 584 funcionários de acordo
+    com os seguintes critérios:
+    a. 50% para aqueles que ganham menos do que três salários mínimos;
+    b. 20% para aqueles que ganham entre três até dez salários mínimos;
+    c. 15% para aqueles que ganham acima de dez até vinte salários mínimos;
+    d. 10% para os demais funcionários.
+    Leia o nome do funcionário, seu salário e o valor do salário mínimo. Calcule o seu novo salário
+    reajustado. Escrever o nome do funcionário, o reajuste e seu novo salário. Calcule quanto à empresa
+    vai aumentar sua folha de pagamento;
+     */
+
 
 
 
